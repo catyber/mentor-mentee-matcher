@@ -1,0 +1,8 @@
+[
+  { "id": "m1", "mentorUserId": "usr_01", "menteeUserId": "usr_50", "satisfaction": 5, "meetingCount": 12, "endedEarly": false },
+  { "id": "m2", "mentorUserId": "usr_01", "menteeUserId": "usr_51", "satisfaction": null, "meetingCount": 3, "endedEarly": true },
+  { "id": "m3", "mentorUserId": "usr_02", "menteeUserId": "usr_60", "satisfaction": 4, "meetingCount": 8, "endedEarly": false },
+  { "id": "m4", "mentorUserId": "usr_02", "menteeUserId": "usr_61", "satisfaction": 3, "meetingCount": 6, "endedEarly": false },
+  { "id": "m5", "mentorUserId": "usr_03", "menteeUserId": "usr_70", "satisfaction": 5, "meetingCount": 10, "endedEarly": false },
+  { "id": "m6", "mentorUserId": "usr_04", "menteeUserId": "usr_80", "satisfaction": 4, "meetingCount": 7, "endedEarly": false }
+]

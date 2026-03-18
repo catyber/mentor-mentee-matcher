@@ -1,0 +1,13 @@
+# Build artifacts
+node_modules/
+dist/
+target/
+*.jar
+
+# Secrets
+.env
+.env.local
+
+# IDE
+.idea/
+*.iml

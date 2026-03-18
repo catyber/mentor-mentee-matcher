@@ -1,0 +1,6 @@
+[
+  { "userId": "usr_01", "capacity": 2, "currentMenteeCount": 1, "skills": ["backend", "scala", "distributed-systems"], "bioText": "I like helping juniors navigate ambiguity. 10 years in distributed systems at fintech." },
+  { "userId": "usr_02", "capacity": 2, "currentMenteeCount": 2, "skills": ["frontend", "typescript", "react"], "bioText": "Career growth and interview prep. I prefer structured weekly check-ins." },
+  { "userId": "usr_03", "capacity": 1, "currentMenteeCount": 0, "skills": ["data-science", "ml", "python"], "bioText": "Research background. I mentor people moving from academia to industry." },
+  { "userId": "usr_04", "capacity": 3, "currentMenteeCount": 1, "skills": ["backend", "java", "spring", "mentoring"], "bioText": null }
+]
