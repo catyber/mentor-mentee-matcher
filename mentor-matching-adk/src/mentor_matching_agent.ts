@@ -1,3 +1,6 @@
+/**
+ * Mentor-matching ADK agent. ADK discovers agents by filename (→ "mentor_matching_agent" in the UI).
+ */
 import "dotenv/config";
 import { LlmAgent } from "@google/adk";
 import { matchMentors } from "./tools.js";

@@ -2,10 +2,10 @@
   "name": "mentor-matching-adk",
   "version": "1.0.0",
   "description": "ADK agent for mentor-mentee matching. Single tool calls the orchestrator.",
-  "main": "src/agent.ts",
+  "main": "src/mentor_matching_agent.ts",
   "scripts": {
-    "agent": "npx adk run mentor_matching_agent.ts",
-    "web": "npx adk web"
+    "agent": "npx adk run src/mentor_matching_agent.ts",
+    "web": "npx adk web src"
   },
   "type": "module",
   "dependencies": {
