@@ -1,21 +1,32 @@
 /**
- * Mentor-matching ADK agent. ADK discovers agents by filename (→ "mentor_matching_agent" in the UI).
+ * Mentor-matching ADK agent using MCPToolset (Streamable HTTP).
+ * Connects to the MCP server on port 3002, which proxies to the Orchestrator.
+ * Architecture: ADK → MCP → Orchestrator → Scorer
  */
 import "dotenv/config";
-import { LlmAgent } from "@google/adk";
-import { matchMentors } from "./tools.js";
+import { LlmAgent, MCPToolset } from "@google/adk";
+import { Custom } from "adk-llm-bridge";
+
+const MCP_URL = process.env.MCP_URL || "http://localhost:3002/mcp";
+
+const groqModel = Custom("llama-3.3-70b-versatile", {
+  baseURL: "https://api.groq.com/openai/v1",
+  apiKey: process.env.GROQ_API_KEY,
+});
+
+const mcpToolset = new MCPToolset({
+  type: "StreamableHTTPConnectionParams",
+  url: MCP_URL,
+});
 
 export const rootAgent = new LlmAgent({
   name: "mentor_matching_agent",
-  model: "gemini-2.0-flash",
+  model: groqModel,
   description:
-    "An agent that finds and ranks mentor candidates for mentees. Use the match_mentors tool when the user asks to find mentors for a mentee.",
-  instruction: `You are a mentor-matching assistant. When a user asks to find mentors for a mentee (e.g. "Find mentors for usr_99" or "Match usr_99 with mentors"):
-
-1. Call match_mentors with the mentee's user ID.
-2. Present the ranked results clearly: mentor ID, total score, and the short explanation for each.
-3. If the mentee is not found or a service is down, explain the error to the user.
-
-Always use the match_mentors tool — do NOT make up scores or data. If you don't have a mentee user ID, ask the user for it.`,
-  tools: [matchMentors],
+    "An agent that helps with mentor-mentee matching. Can list mentors and mentees, view profiles, check mentorship history, and find top mentor recommendations.",
+  instruction:
+    "You are a mentor-matching assistant. Use the available tools to answer questions about mentors, mentees, mentorship history, and matching recommendations. " +
+    "Always use tools to retrieve data. Do NOT make up data or guess — if a tool exists for it, call it. " +
+    "Present results clearly and concisely.",
+  tools: [mcpToolset],
 });

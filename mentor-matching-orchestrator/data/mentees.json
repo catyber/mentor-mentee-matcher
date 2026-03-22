@@ -1,3 +1,10 @@
 [
-  { "userId": "usr_99", "desiredSkills": ["backend", "scala", "career-growth"], "goalsText": "I want to get better at distributed systems and eventually lead a team. Prefer someone who can do weekly syncs." }
+  { "userId": "usr_99", "desiredSkills": ["backend", "scala", "career-growth"], "goalsText": "I want to get better at distributed systems and eventually lead a team. Prefer someone who can do weekly syncs." },
+  { "userId": "usr_20", "desiredSkills": ["frontend", "react", "typescript"], "goalsText": "Transitioning from backend to frontend. Want to build modern React apps and learn component architecture." },
+  { "userId": "usr_21", "desiredSkills": ["ml", "data-science", "python"], "goalsText": "PhD in physics. I want to move into ML engineering and learn production ML pipelines." },
+  { "userId": "usr_22", "desiredSkills": ["devops", "kubernetes", "cloud"], "goalsText": "I want to own infrastructure and deployment. Learning Kubernetes and AWS." },
+  { "userId": "usr_23", "desiredSkills": ["mobile", "ios", "swift"], "goalsText": "Web dev wanting to move to mobile. Interested in Swift and iOS app architecture." },
+  { "userId": "usr_24", "desiredSkills": ["leadership", "product", "career-growth"], "goalsText": "Senior IC wanting to move into product or leadership. Need guidance on stakeholder management." },
+  { "userId": "usr_25", "desiredSkills": ["backend", "java", "spring"], "goalsText": "Junior backend dev. Learning Spring Boot and microservices. Want to improve code quality." },
+  { "userId": "usr_26", "desiredSkills": ["security", "compliance"], "goalsText": "Backend developer. Want to learn secure coding practices and threat modeling for compliance." }
 ]

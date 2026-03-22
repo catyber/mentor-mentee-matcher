@@ -1,7 +1,7 @@
 {
   "name": "mentor-matching-adk",
   "version": "1.0.0",
-  "description": "ADK agent for mentor-mentee matching. Single tool calls the orchestrator.",
+  "description": "ADK agent for mentor-mentee matching. Uses MCPToolset (Streamable HTTP) to connect to the MCP server.",
   "main": "src/mentor_matching_agent.ts",
   "scripts": {
     "agent": "npx adk run src/mentor_matching_agent.ts",
@@ -10,9 +10,8 @@
   "type": "module",
   "dependencies": {
     "@google/adk": "^0.5.0",
-    "axios": "^1.13.6",
-    "dotenv": "^17.3.1",
-    "zod": "^4.3.6"
+    "adk-llm-bridge": "^0.5.0",
+    "dotenv": "^17.3.1"
   },
   "devDependencies": {
     "@google/adk-devtools": "^0.5.0",

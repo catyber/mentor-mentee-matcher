@@ -1,3 +1,5 @@
+// --- Domain entities (raw data from JSON) ---
+
 export interface User {
   id: string;
   managerId: string | null;
@@ -29,6 +31,8 @@ export interface Mentorship {
   endedEarly: boolean;
 }
 
+// --- Enriched profiles (sent to scorer) ---
+
 export interface ScoreMentorProfile {
   userId: string;
   timezone: string;
@@ -52,6 +56,32 @@ export interface ScoreMenteeProfile {
   goalsEmbedding: number[] | null;
   reportingChain: string[];
 }
+
+// --- Scoring weights (configurable, mirrors Scala ScoringWeights) ---
+
+export interface StructuredSubWeights {
+  timezone: number;
+  language: number;
+  skills: number;
+  experienceGap: number;
+  capacitySlack: number;
+}
+
+export interface HistoricalSubWeights {
+  satisfaction: number;
+  retention: number;
+  meeting: number;
+}
+
+export interface ScoringWeights {
+  structured: number;
+  semantic: number;
+  historical: number;
+  structuredSubWeights?: StructuredSubWeights;
+  historicalSubWeights?: HistoricalSubWeights;
+}
+
+// --- Scorer contract (request/response between orchestrator and scorer) ---
 
 export interface StructuredDetail {
   timezoneScore: number;
@@ -77,7 +107,7 @@ export interface RankedMentor {
 export interface RankRequest {
   mentee: ScoreMenteeProfile;
   mentors: ScoreMentorProfile[];
-  weights?: object;
+  weights?: ScoringWeights;
   topN?: number;
 }
 
@@ -85,6 +115,8 @@ export interface RankResponse {
   menteeUserId: string;
   rankings: RankedMentor[];
 }
+
+// --- API response (returned by orchestrator to caller) ---
 
 export interface MatchResult {
   mentorUserId: string;

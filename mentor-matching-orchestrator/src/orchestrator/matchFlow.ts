@@ -15,8 +15,8 @@ import type {
   MatchResult,
   RankRequest,
   StructuredDetail,
+  User,
 } from "../types/index.js";
-import type { User } from "../types/index.js";
 
 export async function runMatch(menteeUserId: string): Promise<MatchResponse> {
   const users = loadUsers();

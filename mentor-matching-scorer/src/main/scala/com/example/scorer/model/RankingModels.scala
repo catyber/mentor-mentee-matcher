@@ -19,8 +19,8 @@ object StructuredSubWeights:
     timezone = 0.15,
     language = 0.20,
     skills = 0.30,
-    experienceGap = 0.10,
-    capacitySlack = 0.05
+    experienceGap = 0.20,
+    capacitySlack = 0.15
   )
 
 case class HistoricalSubWeights(

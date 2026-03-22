@@ -4,5 +4,8 @@
   { "id": "m3", "mentorUserId": "usr_02", "menteeUserId": "usr_60", "satisfaction": 4, "meetingCount": 8, "endedEarly": false },
   { "id": "m4", "mentorUserId": "usr_02", "menteeUserId": "usr_61", "satisfaction": 3, "meetingCount": 6, "endedEarly": false },
   { "id": "m5", "mentorUserId": "usr_03", "menteeUserId": "usr_70", "satisfaction": 5, "meetingCount": 10, "endedEarly": false },
-  { "id": "m6", "mentorUserId": "usr_04", "menteeUserId": "usr_80", "satisfaction": 4, "meetingCount": 7, "endedEarly": false }
+  { "id": "m6", "mentorUserId": "usr_04", "menteeUserId": "usr_80", "satisfaction": 4, "meetingCount": 7, "endedEarly": false },
+  { "id": "m7", "mentorUserId": "usr_01", "menteeUserId": "usr_99", "satisfaction": 4, "meetingCount": 6, "endedEarly": false },
+  { "id": "m8", "mentorUserId": "usr_06", "menteeUserId": "usr_23", "satisfaction": 5, "meetingCount": 4, "endedEarly": false },
+  { "id": "m9", "mentorUserId": "usr_05", "menteeUserId": "usr_22", "satisfaction": null, "meetingCount": 2, "endedEarly": true }
 ]

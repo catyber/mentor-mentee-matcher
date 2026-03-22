@@ -32,11 +32,19 @@ If you see `Address already in use`, another process is using port 3001. Stop it
 | `src/orchestrator/matchFlow.ts` | Assemble data, call scorer, return results |
 | `src/clients/scorerClient.ts` | HTTP client for Scala scorer |
 | `src/routes/match.ts` | POST /api/match handler |
+| `src/routes/api.ts` | GET endpoints for mentors, mentees, mentorships |
+| `src/types/index.ts` | TypeScript interfaces |
 | `src/index.ts` | Express server |
 
 ## API
 
 - **GET /health** — Returns `{"status":"ok"}`
+- **GET /api/mentors** — List all mentors with skills, capacity, and user details
+- **GET /api/mentors/:id** — Get mentor profile (skills, bio, capacity, experience, past mentorships)
+- **GET /api/mentorships** — List all mentorships (past and current)
+- **GET /api/mentees** — List all mentees with user IDs and desired skills
+- **GET /api/mentees/:id** — Get mentee profile (user data + goals, skills)
+- **GET /api/mentees/:id/mentorships** — Get mentorships for a mentee
 - **POST /api/match** — Body: `{ "menteeUserId": "usr_99" }`. Returns ranked top 5 mentors with score breakdowns.
 
 ## Sample call
@@ -70,11 +78,9 @@ Example response:
 }
 ```
 
-Note: Semantic score is now computed from keyword vectors (goals vs bio text similarity); it may vary based on vocabulary overlap.
-
 ## Data
 
-Data is loaded from `data/*.json` (users, mentors, mentees, mentorships). No external MCP services required. **Keyword-based embeddings** are computed inline: vocabulary built from skills, desired_skills, and tokenized goals/bios; each text is converted to a binary L2-normalized vector for semantic scoring via cosine similarity.
+Data is loaded from `data/*.json` (users, mentors, mentees, mentorships). Sample data includes 9 mentors and 8 mentees for varied matching demos. **Keyword-based embeddings** are computed inline: vocabulary built from skills, desired_skills, and tokenized goals/bios; each text is converted to a binary L2-normalized vector for semantic scoring via cosine similarity.
 
 ## Environment
 
