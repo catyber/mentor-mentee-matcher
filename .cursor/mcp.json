@@ -1,7 +1,0 @@
-{
-  "mcpServers": {
-    "mentor-matching": {
-      "url": "http://localhost:3002/mcp"
-    }
-  }
-}

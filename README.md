@@ -126,7 +126,6 @@ mentor-mentee-matcher/
 ├── mentor-matching-orchestrator/  # TypeScript Express (port 3001)
 ├── mentor-matching-mcp/           # MCP server, Streamable HTTP (port 3002)
 ├── mentor-matching-adk/           # ADK agent via MCPToolset (port 8000)
-├── .cursor/mcp.json               # Cursor MCP config (standalone Cursor use)
 └── README.md
 ```
 

@@ -1,7 +1,7 @@
 {
   "name": "mentor-matching-mcp",
   "version": "1.0.0",
-  "description": "MCP server (Streamable HTTP) exposing mentor-matching tools for ADK and Cursor",
+  "description": "MCP server (Streamable HTTP) exposing mentor-matching tools for ADK and other MCP clients",
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
