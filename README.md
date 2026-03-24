@@ -62,6 +62,51 @@ graph LR
 - **Orchestrator** — Backend service (port 3001) that loads data, pre-filters, computes embeddings, and calls the Scorer.
 - **Scorer** — Stateless Scala service (port 8081) that performs structured + semantic + historical scoring.
 
+## Domain model
+
+Raw entities loaded from JSON (`mentor-matching-orchestrator/data/`). 
+Full fields: `mentor-matching-orchestrator/src/types/index.ts`.
+
+```mermaid
+erDiagram
+    User {
+        string id PK
+        string manager_id FK "nullable"
+        string timezone
+        string languages "JSON string[]"
+        int years_experience
+    }
+
+    MentorProfile {
+        string user_id FK
+        int capacity
+        int current_mentee_count
+        string skills "JSON string[]"
+        string bio_text "nullable"
+    }
+
+    MenteeProfile {
+        string user_id FK
+        string desired_skills "JSON string[]"
+        string goals_text "nullable"
+    }
+
+    Mentorship {
+        string id PK
+        string mentor_user_id FK
+        string mentee_user_id FK
+        float satisfaction "nullable, 1-5"
+        int meeting_count
+        boolean ended_early
+    }
+
+    User ||--o| MentorProfile : "userId"
+    User ||--o| MenteeProfile : "userId"
+    User ||--o{ Mentorship : "mentorUserId"
+    User ||--o{ Mentorship : "menteeUserId"
+    User }o--o| User : "managerId"
+```
+
 ## Scoring formula
 
 ```
